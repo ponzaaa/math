@@ -35,6 +35,15 @@ class CustomSet:
                 new_set.add(element)
         return new_set
 
+    def cartesian_product(self, other_set):
+        from .relations import create_ordered_pair
+        product_set = CustomSet()
+        for element in self.elements:
+            for other_element in other_set.elements:
+                pair_set = create_ordered_pair(element, other_element)
+                product_set.add(pair_set)
+        return product_set
+
     def is_subset(self, other_set):
         for element in self.elements:
             if not other_set.contains(element):
