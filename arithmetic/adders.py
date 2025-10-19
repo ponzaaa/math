@@ -1,4 +1,4 @@
-from logic_gates import AND_gate, XOR_gate, OR_gate
+from .logic_gates import AND_gate, XOR_gate, OR_gate
 
 def half_adder(A, B):
     S = XOR_gate(A, B)

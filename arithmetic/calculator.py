@@ -1,5 +1,5 @@
-from adders import full_adder
-from logic_gates import NOT_gate
+from .adders import full_adder
+from .logic_gates import NOT_gate
 
 def add_binary(A_list, B_list):
     A_list, B_list = zero_padding(A_list, B_list)
