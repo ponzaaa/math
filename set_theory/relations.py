@@ -30,3 +30,25 @@ def get_first_element(pair_set):
         if len(element) == 1:
             return element.elements[0]
     raise ValueError('No element in pair_set')
+
+def get_second_element(pair_set):
+    first_element = get_first_element(pair_set)
+    found_length_2 = False
+    for element in pair_set.elements:
+        if len(element) == 2:
+            found_length_2 = True
+            return element.elements[0] if element.elements[0] != first_element else element.elements[1]
+    if not found_length_2:
+        return first_element
+
+def get_range(function_set):
+    range_set = CustomSet()
+    for pair in function_set.elements:
+        range_set.add(get_second_element(pair))
+    return range_set
+
+def get_domain(function_set):
+    domain_set = CustomSet()
+    for pair in function_set.elements:
+        domain_set.add(get_first_element(pair))
+    return domain_set

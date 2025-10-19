@@ -1,5 +1,5 @@
 from set_theory.custom_set import CustomSet
-from set_theory.relations import create_ordered_pair, is_function
+from set_theory.relations import create_ordered_pair, is_function, get_range
 
 domain = CustomSet()
 domain.add(1)
@@ -44,3 +44,20 @@ relation_missing_element.add(pair_1_a)
 
 print(f"\nTesting relation {relation_missing_element}")
 print(f"Is this a function? {is_function(relation_missing_element, domain)}")
+
+print("\n--- Testing Range ---")
+print(f"For the valid function: {relation_is_function}")
+function_range = get_range(relation_is_function)
+print(f"The Range is: {function_range}") # Should print {'a', 'b'}
+
+# Let's test a function where two inputs map to one output
+# f = {(1, 'a'), (2, 'a')}
+pair_2_a = create_ordered_pair(2, 'a')
+function_many_to_one = CustomSet()
+function_many_to_one.add(pair_1_a)
+function_many_to_one.add(pair_2_a)
+
+print(f"\nFor the many-to-one function: {function_many_to_one}")
+print(f"Is it a function? {is_function(function_many_to_one, domain)}") # Should be True
+many_to_one_range = get_range(function_many_to_one)
+print(f"The Range is: {many_to_one_range}") # Should print just {'a'}

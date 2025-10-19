@@ -4,4 +4,5 @@ This project is an effort to build core mathematical concepts and algorithms in 
 
 ### Current status
 * **basic integer arithmetic**: binary integer addition, subtraction, multiplication and division from logic
-* **set theory basics**: custom set class and its basic operations (union, intersection, difference...) 
+* **set theory basics**: custom set class and its basic operations (union, intersection, difference...)
+* **relations & functions**: Defined ordered pairs (from sets), cartesian products, and functions as special relations. Includes logic to validate functions and find their domain and range.
