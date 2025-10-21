@@ -21,9 +21,9 @@ def is_prime(a):
 def gcd(a, b):
     # edge cases
     if is_equal(a, [0]):
-        raise Exception('A is zero')
+        return b
     elif is_equal(b, [0]):
-        raise Exception('B is zero')
+        raise Exception('You cannot divide by zero')
     elif is_equal(a, [1]) or is_equal(b, [1]):
         return [1]
 

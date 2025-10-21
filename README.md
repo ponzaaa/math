@@ -8,3 +8,5 @@ This project is an effort to build core mathematical concepts and algorithms in 
 * **relations & functions**: defined ordered pairs (from sets), cartesian products, and functions as special relations. Includes logic to validate functions and find their domain and range.
 * **number theory basics**: divisibility and greatest common denominator finder using recursive Euclid's Algorithm
 * **rational numbers class**: canonical form for rational numbers stored as fractions and their basic operations
+* **converters**: Python integers to binary strings for our engine
+* **linear algebra**: vectors, matrices and basics operations

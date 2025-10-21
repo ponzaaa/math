@@ -1,8 +1,19 @@
 from arithmetic.calculator import is_equal, divide_binary, multiply_binary, add_binary, subtract_binary
 from number_theory.divisibility import gcd
+from utils.converters import binary_to_decimal, decimal_to_binary
+
+
+def create_rational(p_int, q_int):
+    """
+    Creates a RationalNumber from two Python integers.
+    """
+    p_bits = decimal_to_binary(p_int)
+    q_bits = decimal_to_binary(q_int)
+    return RationalNumber(p_bits, q_bits)
 
 class RationalNumber:
     def __init__(self, p, q):
+
         if is_equal(q, [0]):
             raise ValueError("You cannot divide by zero")
         greatest_common_divisor = gcd(p, q)
@@ -32,9 +43,9 @@ class RationalNumber:
         return RationalNumber(nominator, denominator)
 
     def __repr__(self):
-        p_str = "".join(map(str, self.p))
-        q_str = "".join(map(str, self.q))
+        p_decimal = binary_to_decimal(self.p)
+        q_decimal = binary_to_decimal(self.q)
 
-        if q_str == '1':
-            return f"(int: {p_str})"
-        return f"({p_str} / {q_str})"
+        if q_decimal == 1:
+            return f"{p_decimal}"
+        return f"({p_decimal}/{q_decimal})"
