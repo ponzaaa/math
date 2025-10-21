@@ -1,5 +1,8 @@
 from set_theory.custom_set import CustomSet
 from set_theory.relations import create_ordered_pair, is_function, get_range
+from number_theory.divisibility import is_prime
+from numbers.rational import RationalNumber
+
 
 domain = CustomSet()
 domain.add(1)
@@ -61,3 +64,36 @@ print(f"\nFor the many-to-one function: {function_many_to_one}")
 print(f"Is it a function? {is_function(function_many_to_one, domain)}") # Should be True
 many_to_one_range = get_range(function_many_to_one)
 print(f"The Range is: {many_to_one_range}") # Should print just {'a'}
+
+# Add this to the end of main.py
+print("\n--- Testing is_prime ---")
+print(f"Is 5 ([1, 0, 1]) prime? {is_prime([1, 0, 1])}") # True
+print(f"Is 6 ([1, 1, 0]) prime? {is_prime([1, 1, 0])}") # False
+print(f"Is 7 ([1, 1, 1]) prime? {is_prime([1, 1, 1])}") # True
+
+# Add this to the end of main.py
+print("\n--- Testing RationalNumber ---")
+
+# --- Test 1: Creation and Simplification ---
+# 2/4 should simplify to 1/2
+num_a = RationalNumber([1, 0], [1, 0, 0]) # 2, 4
+print(f"Creating 2/4: {num_a}") # Should print (1 / 10) i.e. 1/2
+
+# --- Test 2: Addition (1/2 + 1/3 = 5/6) ---
+num_b = RationalNumber([1], [1, 0]) # 1, 2
+num_c = RationalNumber([1], [1, 1]) # 1, 3
+sum_val = num_b.add(num_c)
+print(f"1/2 + 1/3 = {sum_val}") # Should print (101 / 110) i.e. 5/6
+
+# --- Test 3: Subtraction (1/2 - 1/3 = 1/6) ---
+sub_val = num_b.subtract(num_c)
+print(f"1/2 - 1/3 = {sub_val}") # Should print (1 / 110) i.e. 1/6
+
+# --- Test 4: Multiplication (1/2 * 2/3 = 1/3) ---
+num_d = RationalNumber([1, 0], [1, 1]) # 2, 3
+mul_val = num_b.multiply(num_d)
+print(f"1/2 * 2/3 = {mul_val}") # Should print (1 / 11) i.e. 1/3
+
+# --- Test 5: Division (1/2 / 1/3 = 3/2) ---
+div_val = num_b.divide(num_c)
+print(f"1/2 / 1/3 = {div_val}") # Should print (11 / 10) i.e. 3/2

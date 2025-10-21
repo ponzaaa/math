@@ -46,8 +46,7 @@ def divide_binary(A_list, B_list):
             current_part = subtract_binary(current_part, B_list)
         else:
             quotient.append(0)
-    return (quotient, current_part)
-
+    return quotient, current_part
 
 def invert_binary(bit_list):
     inverted_list = []
@@ -85,6 +84,21 @@ def is_less_or_equal(A_list, B_list):
             return False
     return True
 
+def is_less_than(A_list, B_list):
+    A_list, B_list = zero_padding(A_list, B_list)
+    for i in range(0, len(A_list)):
+        if B_list[i] > A_list[i]:
+            return True
+        elif A_list[i] > B_list[i]:
+            return False
+    return False
+
+def is_equal(A_list, B_list):
+    A_list, B_list = zero_padding(A_list, B_list)
+    for i in range(0, len(A_list)):
+        if B_list[i] > A_list[i] or A_list[i] > B_list[i]:
+            return False
+    return True
 
 def trim_zeros(bit_list):
     if not bit_list:
