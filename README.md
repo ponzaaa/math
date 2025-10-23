@@ -10,3 +10,7 @@ This project is an effort to build core mathematical concepts and algorithms in 
 * **rational numbers class**: canonical form for rational numbers stored as fractions and their basic operations
 * **converters**: Python integers to binary strings for our engine
 * **linear algebra**: vectors, matrices and basics operations
+* **utils**: converters between Python integers and binary lists, factorial function.
+* **linear algebra**: vectors, matrices, basic operations (+, -, scalar *, dot product, matrix *), and Gaussian elimination for solving systems.
+* **calculus basics**: polynomial class implementing evaluate, differentiate, and integrate. Taylor series approximations for exp(x), sin(x), cos(x).
+* **complex numbers**: complex number class with basic arithmetic operations (+, -, *).

@@ -1,9 +1,7 @@
-from copy import deepcopy
-
 from arithmetic.calculator import is_equal, divide_binary, multiply_binary, add_binary, subtract_binary, \
     is_less_or_equal, is_less_than
 from number_theory.divisibility import gcd
-from utils.converters import binary_to_decimal, decimal_to_binary
+from utils.tools import binary_to_decimal, decimal_to_binary
 
 
 def create_rational(p_int, q_int):

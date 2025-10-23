@@ -12,3 +12,15 @@ def binary_to_decimal(binary_list):
     for i in range(1, len(binary_list) + 1):
         n += (2 ** (i-1)) * binary_list[-i]
     return n
+
+def factorial_finder(n):
+    if n == 0:
+        return 1
+    elif n == 1:
+        return 1
+    else:
+        return n * factorial_finder(n-1)
+
+def factorial(n):
+    from numbers.rational import create_rational
+    return create_rational(factorial_finder(n), 1)
